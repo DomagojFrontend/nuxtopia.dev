@@ -9,5 +9,6 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/documentation': { redirect: '/documentation/get_started/about' },
+    '/documentation/**/**': { prerender: true },
   }
 })
