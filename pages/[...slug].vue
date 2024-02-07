@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
     <main>
-        <ContentDoc  :path="$route.path">
+        <ContentDoc>
             <template #not-found>
                 <span>Error</span>
             </template>
