@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: true,
-  modules: ['@nuxt/content', '@nuxt/ui', '@vueuse/nuxt'],
+  modules: ['@nuxt/content', '@nuxt/ui', '@vueuse/nuxt', '@nuxthq/studio'],
   content: {
     highlight: {
       theme: 'github-dark'
