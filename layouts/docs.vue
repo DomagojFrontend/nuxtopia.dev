@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const queryGetStarted = queryContent('documentation', 'get_started').find()
-const queryFrameworks = queryContent('documentation', 'frameworks').find()
-const queryUi = queryContent('documentation', 'ui').find()
+const queryGetStarted = await (queryContent('documentation', 'get_started').find())
+const queryFrameworks = await (queryContent('documentation', 'frameworks').find())
+const queryUi = await (queryContent('documentation', 'ui').find())
 
 const getStartedLinks = await createNav(queryGetStarted)
 const frameworksLinks = await createNav(queryFrameworks)
