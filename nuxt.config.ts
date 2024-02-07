@@ -8,9 +8,9 @@ export default defineNuxtConfig({
       theme: 'github-dark'
     }
   },
-  // routeRules: {
+  routeRules: {
     // '/documentation/**': { prerender: true },
-    // '/documentation': {prerender: true, redirect: '/documentation/get_started/about' },
+    '/documentation': {ssr: true, redirect: '/documentation/get_started/about' },
     // '/documentation/**/**': { prerender: true },
-  // }
+  }
 })
