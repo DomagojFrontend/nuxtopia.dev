@@ -1,7 +1,43 @@
 <script setup lang="ts">
+const route = useRoute()
+const showDocs = ref(false)
+
+watch(() => route.path, value => {
+  if (value.startsWith('/documentation')) {
+    showDocs.value = true
+  } else {
+    showDocs.value = false
+  }
+}, { deep: true })
 const { data: navigation } = await useAsyncData('navigation', () =>
   fetchContentNavigation()
 )
+const items = [
+  {
+    label: 'Get started',
+    icon: 'i-heroicons-information-circle',
+    slot: 'guide'
+  },
+  {
+    label: 'Frameworks',
+    icon: 'i-heroicons-command-line',
+    slot: 'frameworks'
+  },
+  {
+    label: 'UI libraries',
+    icon: 'i-heroicons-paint-brush',
+    slot: 'ui'
+  }
+]
+const queryGetStarted = await(queryContent('documentation', 'get_started').find())
+const queryFrameworks = await(queryContent('documentation', 'frameworks').find())
+const queryUi = await(queryContent('documentation', 'ui').find())
+
+const getStartedLinks = await createNav(queryGetStarted)
+const frameworksLinks = await createNav(queryFrameworks)
+const uiLinks = await createNav(queryUi)
+
+
 const socials = [
   {
     icon: 'GitHub',
@@ -12,13 +48,18 @@ const socials = [
     link: 'https://twitter.com/nuxt_js'
   }
 ]
+
+const isOpen = ref(false)
 </script>
 
 <template>
-  <header class="bg-background/75 backdrop-blur border-b -mb-px sticky top-0 z-50 border-gray-200 dark:border-gray-800 h-[64px]">
+  <header
+    class="bg-background/75 backdrop-blur border-b -mb-px sticky top-0 z-50 border-gray-200 dark:border-gray-800 h-[64px]">
     <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between gap-3 h-[64px] ">
       <div class="flex-1">
-        <img src="/logo-green-white.svg" alt="Logo">
+        <NuxtLink to="/">
+          <img src="/logo-green-white.svg" alt="Logo">
+        </NuxtLink>
       </div>
       <div class="items-center gap-x-8 hidden lg:flex">
         <NuxtLink v-for="nav in navigation" :key="nav._path" :to="nav._path">{{ nav.title }}</NuxtLink>
@@ -26,7 +67,33 @@ const socials = [
       <div class="flex items-center justify-end lg:flex-1 gap-1.5">
         <NuxtLink v-for="social in socials" :key="social.link" :to="social.link">{{ social.icon }}</NuxtLink>
       </div>
-
+      <UButton class="block lg:hidden" variant="ghost" color="black" icon="i-heroicons-bars-3"
+        @click="isOpen = !isOpen" />
     </div>
+    <USlideover v-model="isOpen">
+      <UButton class="absolute top-4 right-4" variant="ghost" color="black" icon="i-heroicons-x-mark"
+        @click="isOpen = !isOpen" />
+      <div class="flex flex-col gap-y-4 p-4">
+        <NuxtLink @click="isOpen = false" v-for="nav in navigation" :key="nav._path" :to="nav._path">{{ nav.title }}
+        </NuxtLink>
+        <UAccordion v-if="showDocs" :items="items" multiple default-open color="black" variant="ghost">
+          <template #guide>
+            <div class="ml-3">
+              <TheDocsNav @click="isOpen = false" :links="getStartedLinks" />
+            </div>
+          </template>
+          <template #frameworks>
+            <div class="ml-3">
+              <TheDocsNav @click="isOpen = false" :links="frameworksLinks" />
+            </div>
+          </template>
+          <template #ui>
+            <div class="ml-3">
+              <TheDocsNav @click="isOpen = false" :links="uiLinks" />
+            </div>
+          </template>
+        </UAccordion>
+      </div>
+    </USlideover>
   </header>
 </template>
