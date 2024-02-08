@@ -1,29 +1,17 @@
 <script setup lang="ts">
+import type { AccordionItem } from '#ui/types'
+
 const queryGetStarted = await(queryContent('documentation', 'get_started').find())
 const queryFrameworks = await(queryContent('documentation', 'frameworks').find())
 const queryUi = await(queryContent('documentation', 'ui').find())
+const items = await(queryContent().where({ _partial: true }).only(['label', 'icon', 'slot' ]).find())
+console.log(items)
 
 const getStartedLinks = await createNav(queryGetStarted)
 const frameworksLinks = await createNav(queryFrameworks)
 const uiLinks = await createNav(queryUi)
 
-const items = [
-    {
-        label: 'Get started',
-        icon: 'i-heroicons-information-circle',
-        slot: 'guide'
-    },
-    {
-        label: 'Frameworks',
-        icon: 'i-heroicons-command-line',
-        slot: 'frameworks'
-    },
-    {
-        label: 'UI libraries',
-        icon: 'i-heroicons-paint-brush',
-        slot: 'ui'
-    }
-]
+
 </script>
 
 <template>
@@ -49,7 +37,6 @@ const items = [
                     </template>
                 </UAccordion>
             </div>
-
             <div class="py-4 px-2 w-full">
                 <slot />
             </div>
