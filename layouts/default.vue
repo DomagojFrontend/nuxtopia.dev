@@ -3,9 +3,8 @@
 </script>
 
 <template>
-    <div>
-        <TheNav />
-
+    <main>
+        <NavMain/>
         <slot />
-    </div>
+    </main>
 </template>

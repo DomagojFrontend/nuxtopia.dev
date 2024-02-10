@@ -2,7 +2,7 @@
 import type { VerticalNavigationLink } from '#ui/types'
 
 defineProps<{
-    links: VerticalNavigationLink[]
+    links: VerticalNavigationLink[] | undefined
 }>()
 </script>
 

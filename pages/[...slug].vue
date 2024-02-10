@@ -1,6 +1,11 @@
 <script setup lang="ts">
 definePageMeta({
-    layout: 'documentation'
+    layout: 'documentation',
+})
+useHead({
+    titleTemplate: (titleChunk) => {
+    return titleChunk ? `Nuxtopia -${titleChunk}` : 'Nuxtopia';
+  }
 })
 </script>
 
