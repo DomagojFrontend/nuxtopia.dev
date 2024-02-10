@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     }
   },
   routeRules: {
-    '/': {ssr: true, redirect: '/documentation/get_started/about' },
+    '/': {ssr: true, redirect: '/documentation/guide/about' },
     // '/documentation/**/**': { prerender: true },
   }
 })

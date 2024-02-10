@@ -1,3 +1,195 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib"
+    "typescript.tsdk": "node_modules/typescript/lib",
+    // custom vscode settings
+    "zenMode.hideStatusBar": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.restore": true,
+    "zenMode.centerLayout": true,
+    "gitlens.mode.active": "zen",
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": false,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.commandLineModeKeyBindings": [],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "g",
+                "c",
+                "c"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "t",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "t",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "t",
+                "n"
+            ],
+            "commands": [
+                "workbench.action.files.newUntitledFile"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "t",
+                "d"
+            ],
+            "commands": [
+                "workbench.action.closeActiveEditor"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "f",
+                "f",
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "<leader>",
+                ">",
+            ],
+            "commands": [
+                "workbench.action.terminal.toggleTerminal"
+            ],
+            "silent": true
+        }
+    ],
+    "terminal.integrated.fontFamily": "Hack NF",
+    "editor.fontLigatures": true,
+    "editor.minimap.enabled": false,
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar"
+    },
+    "intelephense.stubs": [
+        "apache",
+        "bcmath",
+        "bz2",
+        "calendar",
+        "com_dotnet",
+        "Core",
+        "ctype",
+        "curl",
+        "date",
+        "dba",
+        "dom",
+        "enchant",
+        "exif",
+        "FFI",
+        "fileinfo",
+        "filter",
+        "fpm",
+        "ftp",
+        "gd",
+        "gettext",
+        "gmp",
+        "hash",
+        "iconv",
+        "imap",
+        "intl",
+        "json",
+        "ldap",
+        "libxml",
+        "mbstring",
+        "meta",
+        "mysqli",
+        "oci8",
+        "odbc",
+        "openssl",
+        "pcntl",
+        "pcre",
+        "PDO",
+        "pdo_ibm",
+        "pdo_mysql",
+        "pdo_pgsql",
+        "pdo_sqlite",
+        "pgsql",
+        "Phar",
+        "posix",
+        "pspell",
+        "readline",
+        "Reflection",
+        "session",
+        "shmop",
+        "SimpleXML",
+        "snmp",
+        "soap",
+        "sockets",
+        "sodium",
+        "SPL",
+        "sqlite3",
+        "standard",
+        "superglobals",
+        "sysvmsg",
+        "sysvsem",
+        "sysvshm",
+        "tidy",
+        "tokenizer",
+        "xml",
+        "xmlreader",
+        "xmlrpc",
+        "xmlwriter",
+        "xsl",
+        "Zend OPcache",
+        "zip",
+        "zlib",
+        "wordpress"
+    ],
+    "workbench.sideBar.location": "right",
+    "workbench.colorTheme": "Solarized Osaka",
+    "php.validate.executablePath": "C:\\xampp\\php\\php.exe",
+    "php.executablePath": "C:\\xampp\\php\\php.exe",
+    "editor.fontSize": 16,
+    "editor.lineHeight": 30,
+    "window.zoomLevel": 1.6,
+    "codeium.enableConfig": {
+        "*": true,
+        "markdown": true
+    },
+    "nuxtr.defaultPackageManager": "Bun",
+    "nuxtr.vueFiles.pages.defaultTemplate": "default.page-template",
+    "nuxtr.openItemsAfterCreation": true,
+    "remote.autoForwardPortsSource": "hybrid"
 }
