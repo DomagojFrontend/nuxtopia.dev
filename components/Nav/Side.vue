@@ -1,5 +1,3 @@
-
-import type SideLinksVue from './SideLinks.vue';
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
 import type { AccordionItem, VerticalNavigationLink } from '#ui/types'
@@ -19,8 +17,8 @@ items.value.forEach(async (item: any) => {
 
 <template>
     <aside>
-        <div class="flex flex-row gap-4 px-8 max-w-7xl mx-auto">
-            <div class="hidden md:flex md:col-span-2 py-4 px-2 min-h-screen border-r-[1px] border-gray-800">
+        <div class="flex flex-row gap-4 lg:px-8 w-full max-w-7xl lg:mx-auto">
+            <div class="flex w-full lg:col-span-2 pt-24 lg:pt-12 px-2 max-h-screen">
                 <UAccordion :items="items" default-open multiple color="black" variant="ghost">
                     <template #item="{ item }">
                         <div class="ml-3">
@@ -28,9 +26,6 @@ items.value.forEach(async (item: any) => {
                         </div>
                     </template>
                 </UAccordion>
-            </div>
-            <div class="py-4 px-2 w-full">
-                <slot />
             </div>
         </div>
     </aside>

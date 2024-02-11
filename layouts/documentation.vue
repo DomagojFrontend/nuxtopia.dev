@@ -13,16 +13,17 @@ items.value.forEach(async (item: any) => {
     links.value = await queryContent('documentation', item.name).find()
     item.links = createNav(links.value)
 })
+
 </script>
 
 <template>
-    <main>
+    <main class=" bg-gray-950">
         <NavMain />
         <div class="flex flex-row gap-4 px-8 max-w-7xl mx-auto">
-            <div class="hidden md:flex md:col-span-2 py-4 px-2 min-h-screen border-r-[1px] border-gray-800">
+            <div class="hidden lg:flex md:col-span-2 py-4 px-2 min-h-screen border-r-[1px] border-gray-800">
                 <NavSide />
             </div>
-            <div class="py-4 px-2 w-full">
+            <div class="pt-12 px-2 w-full min-h-screen">
                 <slot />
             </div>
         </div>
