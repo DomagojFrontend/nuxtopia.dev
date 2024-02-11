@@ -12,7 +12,8 @@ export default defineNuxtConfig({
   content: {
     highlight: {
       theme: 'github-dark'
-    }
+    },
+    documentDriven: true
   },
   ui:{
     icons:['heroicons', 'carbon']

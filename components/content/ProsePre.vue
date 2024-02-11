@@ -40,7 +40,7 @@ const { copy, copied } = useClipboard()
                 <UButton icon="i-heroicons-clipboard-document" color="black" variant="ghost" @click="copy(code)" />
             </div>
         </div>
-        <pre :class="$props.class" class="py-4"><slot /></pre>
+        <pre :class="$props.class" class="py-4 w-full overflow-x-scroll"><slot /></pre>
     </div>
 </template>
   
