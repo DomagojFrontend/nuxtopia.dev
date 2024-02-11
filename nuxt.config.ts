@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true
+    }
+  },
   ssr: true,
   modules: ['@nuxt/content', '@nuxt/ui', '@vueuse/nuxt', '@nuxthq/studio'],
   content: {
@@ -8,8 +14,11 @@ export default defineNuxtConfig({
       theme: 'github-dark'
     }
   },
+  ui:{
+    icons:['heroicons', 'carbon']
+  },
   routeRules: {
-    '/': {ssr: true, redirect: '/documentation/guide/about' },
-    // '/documentation/**/**': { prerender: true },
+    '/': { redirect: '/documentation/guide/about' },
+    '/documentation/**': {cache: { maxAge: 60 * 60}},
   }
 })

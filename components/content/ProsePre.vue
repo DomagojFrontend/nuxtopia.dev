@@ -29,7 +29,7 @@ defineProps({
 const { copy, copied } = useClipboard()
 </script>
 <template>
-    <div class="max-w-2xl rounded-t-md bg-slate-800 my-8 shadow-lg shadow-zinc-900">
+    <div class="max-w-2xl rounded-t-md bg-slate-800 shadow-lg shadow-zinc-900">
         <div class="flex items-center justify-between rounded-t-md bg-zinc-900 text-gray-600 px-4 py-2">
             <div class="flex items-center justify-center gap-2">
                 <UIcon v-if="filename" name="i-heroicons-code-bracket" />

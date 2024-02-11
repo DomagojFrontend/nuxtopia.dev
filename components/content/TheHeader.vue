@@ -22,5 +22,4 @@ defineProps({
         </h1>
         <span class="text-lg  text-gray-700 dark:text-gray-500 font-semibold">{{ description }}</span>
     </header>
-    <UDivider />
 </template>

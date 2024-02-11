@@ -17,9 +17,9 @@ items.value.forEach(async (item: any) => {
 
 <template>
     <aside>
-        <div class="flex flex-row gap-4 lg:px-8 w-full max-w-7xl lg:mx-auto">
+        <div class="flex flex-row w-full lg:gap-4 lg:px-8 lg:max-w-7xl lg:mx-auto">
             <div class="flex w-full lg:col-span-2 pt-24 lg:pt-12 px-2 max-h-screen">
-                <UAccordion :items="items" default-open multiple color="black" variant="ghost">
+                <UAccordion :items="items" multiple color="black" variant="ghost">
                     <template #item="{ item }">
                         <div class="ml-3">
                             <NavSideLinks :links="item.links" />
