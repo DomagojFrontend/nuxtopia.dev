@@ -3,7 +3,7 @@ const { prev, next } = useContent()
 </script>
 
 <template>
-    <div class="flex flex-row justify-between items-center py-16 ">
+    <div class="flex felx-col lg:flex-row justify-between items-center py-16 ">
         <UButtonGroup v-if="prev" class="flex flex-col items-start gap-4 border-[1px] border-gray-500 rounded-md px-4 py-8 group cursor-pointer border-[1px]:"
             variant="soft" color="gray" :to="prev._path">
             <UButton icon="i-carbon-arrow-left" class="mr-2" />
