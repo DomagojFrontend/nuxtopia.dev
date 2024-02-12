@@ -19,7 +19,6 @@ export default defineNuxtConfig({
     icons:['heroicons', 'carbon']
   },
   routeRules: {
-    '/': { redirect: '/documentation/guide/about' },
-    '/documentation/**': {cache: { maxAge: 60 * 60}},
+    '/documentation': { redirect: '/documentation/guide/about' },
   }
 })

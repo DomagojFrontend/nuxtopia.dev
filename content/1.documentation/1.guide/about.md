@@ -25,6 +25,3 @@ Explore a World of Possibilities
 #description
 Nuxtopia is a community-driven space where we believe in the power of community and collaboration. Dive into vast collection of resources, tutorials, and examples curated by me [__{{author}}__](https://github.com/DomagojFrontend). From beginner-friendly guides to advanced techniques, there's something for everyone in this ever-growing library.
 ::
-
-:TheButtons
-

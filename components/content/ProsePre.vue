@@ -29,8 +29,8 @@ defineProps({
 const { copy, copied } = useClipboard()
 </script>
 <template>
-    <div class="max-w-2xl rounded-t-md bg-slate-800 shadow-lg shadow-zinc-900">
-        <div class="flex items-center justify-between rounded-t-md bg-zinc-900 text-gray-600 px-4 py-2">
+    <div class="max-w-2xl rounded-t-md bg-slate-800">
+        <div class="flex items-center justify-between rounded-t-md bg-gray-900 text-gray-400 px-4 py-2">
             <div class="flex items-center justify-center gap-2">
                 <UIcon v-if="filename" name="i-heroicons-code-bracket" />
                 <span v-if="filename">{{ filename }}</span>
@@ -40,7 +40,7 @@ const { copy, copied } = useClipboard()
                 <UButton icon="i-heroicons-clipboard-document" color="black" variant="ghost" @click="copy(code)" />
             </div>
         </div>
-        <pre :class="$props.class" class="py-4 w-full overflow-x-scroll"><slot /></pre>
+        <pre :class="$props.class" class="py-4 max-w-max"><slot /></pre>
     </div>
 </template>
   

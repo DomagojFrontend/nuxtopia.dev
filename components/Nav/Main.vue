@@ -26,7 +26,7 @@ const socials = [
             </div>
             <div class="flex-1 items-center justify-center flex">
 
-                <UBadge label="Work in progress" />
+                <UBadge label="Work in progress" variant="outline"/>
             </div>
             <!-- <div class="items-center gap-x-8 hidden lg:flex">
                 <NuxtLink v-for="nav in navigation" :key="nav._path" :to="nav._path">{{ nav.title }}</NuxtLink>

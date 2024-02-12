@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-    documentDriven:{
+    documentDriven: {
         page: true,
         surround: true
     }
@@ -15,12 +15,9 @@ useHead({
 
 <template>
     <main>
-        <ContentRenderer :key="page._id" :value="page" />
-        <PagePrevNext />
-        <!-- <ContentDoc>
-            <template #not-found>
-                <span>Error</span>
-            </template>
-        </ContentDoc> -->
+        <NuxtLayout name="default">
+                <ContentRenderer :key="page._id" :value="page" />
+                <PagePrevNext />
+        </NuxtLayout>
     </main>
 </template>
