@@ -19,6 +19,8 @@
   "dependencies": {
     "@iconify-json/carbon": "^1.1.29",
     "@nuxt/content": "^2.11.0",
-    "@nuxt/ui": "^2.13.0"
+    "@nuxt/ui": "^2.13.0",
+    "@tresjs/nuxt": "^2.1.1",
+    "tree": "^0.1.3"
   }
 }

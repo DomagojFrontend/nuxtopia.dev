@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     }
   },
   ssr: true,
-  modules: ['@nuxt/content', '@nuxt/ui', '@vueuse/nuxt', '@nuxthq/studio'],
+  modules: ['@nuxt/content', '@nuxt/ui', '@vueuse/nuxt', '@nuxthq/studio','@tresjs/nuxt'],
   content: {
     highlight: {
       theme: 'github-dark'
